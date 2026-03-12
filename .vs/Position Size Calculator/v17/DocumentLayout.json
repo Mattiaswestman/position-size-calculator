@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Development\\Position Size Calculator\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2EDB9C1E-986B-436C-8BE1-DA06CEDAD143}|Position Size Calculator\\Position Size Calculator.csproj|c:\\development\\position size calculator\\position size calculator\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2EDB9C1E-986B-436C-8BE1-DA06CEDAD143}|Position Size Calculator\\Position Size Calculator.csproj|solutionrelative:position size calculator\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MauiProgram.cs",
+              "DocumentMoniker": "C:\\Development\\Position Size Calculator\\Position Size Calculator\\MauiProgram.cs",
+              "RelativeDocumentMoniker": "Position Size Calculator\\MauiProgram.cs",
+              "ToolTip": "C:\\Development\\Position Size Calculator\\Position Size Calculator\\MauiProgram.cs",
+              "RelativeToolTip": "Position Size Calculator\\MauiProgram.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T17:47:26.808Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
