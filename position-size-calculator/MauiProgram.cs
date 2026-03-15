@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 
-namespace Position_Size_Calculator
+namespace PositionSizeCalculator
 {
     public static class MauiProgram
     {

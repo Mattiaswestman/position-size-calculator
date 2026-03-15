@@ -1,7 +1,7 @@
 ﻿using ObjCRuntime;
 using UIKit;
 
-namespace Position_Size_Calculator
+namespace PositionSizeCalculator
 {
     public class Program
     {

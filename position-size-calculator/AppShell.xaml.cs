@@ -1,4 +1,4 @@
-﻿namespace Position_Size_Calculator
+﻿namespace PositionSizeCalculator
 {
     public partial class AppShell : Shell
     {

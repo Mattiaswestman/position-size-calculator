@@ -1,6 +1,6 @@
 ﻿using Foundation;
 
-namespace Position_Size_Calculator
+namespace PositionSizeCalculator
 {
     [Register("AppDelegate")]
     public class AppDelegate : MauiUIApplicationDelegate
