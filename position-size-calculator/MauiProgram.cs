@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using PositionSizeCalculator.ViewModel;
 
 namespace PositionSizeCalculator
 {
@@ -15,9 +15,8 @@ namespace PositionSizeCalculator
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
-#if DEBUG
-    		builder.Logging.AddDebug();
-#endif
+            builder.Services.AddSingleton<MainPage>();
+            builder.Services.AddSingleton<MainViewModel>();
 
             return builder.Build();
         }
