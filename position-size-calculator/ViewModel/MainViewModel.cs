@@ -7,7 +7,7 @@ namespace PositionSizeCalculator.ViewModel
     public partial class MainViewModel : ObservableObject
     {
         [ObservableProperty]
-        ObservableCollection<string> items;
+        private ObservableCollection<string> items;
 
         [ObservableProperty]
         private string text;
@@ -36,6 +36,12 @@ namespace PositionSizeCalculator.ViewModel
             {
                 Items.Remove(text);
             }
+        }
+
+        [RelayCommand]
+        async Task Tap(string text)
+        {
+            await Shell.Current.GoToAsync($"{nameof(DetailPage)}?Text={text}");
         }
     }
 }
