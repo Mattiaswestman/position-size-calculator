@@ -1,27 +1,37 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 
 namespace PositionSizeCalculator.ViewModel
 {
     public partial class MainViewModel : ObservableObject
     {
+        private IConnectivity connectivity;
+
         [ObservableProperty]
         private ObservableCollection<string> items;
 
         [ObservableProperty]
         private string text;
 
-        public MainViewModel()
+        public MainViewModel(IConnectivity connectivity)
         {
             items = new ObservableCollection<string>();
+            this.connectivity = connectivity;
         }
 
         [RelayCommand]
-        void Add()
+        async Task Add()
         {
             if (string.IsNullOrWhiteSpace(Text))
             {
+                return;
+            }
+
+            if (connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                await Shell.Current.DisplayAlert("Error", "No internet detected", "OK");
                 return;
             }
 
