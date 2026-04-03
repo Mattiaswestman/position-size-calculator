@@ -5,53 +5,200 @@
              xmlns:viewmodel="clr-namespace:PositionSizeCalculator.ViewModel"
              x:DataType="viewmodel:MainViewModel">
 
-    <Grid RowDefinitions="100, Auto, *"
-          ColumnDefinitions="0.75*, 0.25*"
-          Padding="10"
-          RowSpacing="10"
-          ColumnSpacing="10">
+    <Grid RowSpacing="25" 
+          Padding="25">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-        <Image Grid.ColumnSpan="2"
-               Source="profile_circle.png"
-               BackgroundColor ="Transparent"/>
+        <Grid Grid.Row="0">
+            <Label HorizontalOptions="Center"
+                   VerticalOptions="Center"              
+                   Text="Position Size Calculator"
+                   FontSize="30"
+                   FontAttributes="Bold"
+                   TextColor="White"/>
+        </Grid>
 
-        <Entry Placeholder="Enter task"
-               Text="{Binding Text}"
-               Grid.Row="1"/>
+        <Grid Grid.Row="1">
 
-        <Button Text="Add"
-                Command="{Binding AddCommand}"
-                Grid.Row="1"
-                Grid.Column="1"/>
+            <Grid ColumnSpacing="25">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                </Grid.ColumnDefinitions>
 
-        <CollectionView Grid.Row="2" Grid.ColumnSpan="2"
-                        ItemsSource="{Binding Items}"
-                        SelectionMode="None">
+                <Button Grid.Column="0"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Center"
+                        CornerRadius="10"
+                        BackgroundColor="{StaticResource Green}"
+                        Text="Long"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                        TextColor="White"/>
 
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="{x:Type x:String}">
-                    <SwipeView>
-                        <SwipeView.RightItems>
-                            <SwipeItems>
-                                <SwipeItem Text="Delete"
-                                           BackgroundColor="Red"
-                                           Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=DeleteCommand}"
-                                           CommandParameter="{Binding .}"/>
-                            </SwipeItems>
-                        </SwipeView.RightItems>
-                        <Grid Padding="2">
-                            <Frame>
-                                <Frame.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=TapCommand}"
-                                                          CommandParameter="{Binding .}"/>
-                                </Frame.GestureRecognizers>
-                                <Label Text="{Binding .}"
-                                       FontSize="24"/>
-                            </Frame>
-                        </Grid>
-                    </SwipeView>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+                <Button Grid.Column="1"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Center"
+                        CornerRadius="10"
+                        BackgroundColor="{StaticResource Red}"
+                        Text="Short"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                        TextColor="White"/>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="2">
+
+            <Grid RowSpacing="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+
+                    <Grid RowSpacing="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0"
+                               HorizontalOptions="Start"
+                               VerticalOptions="Center"
+                               Text="Account Size"
+                               FontSize="18"
+                               TextColor="White"/>
+
+						<Border Grid.Row="1"
+                                HorizontalOptions="Fill"
+                                VerticalOptions="Center"
+                                Padding="10, 0"
+                                Background="{StaticResource ForegroundColor}"
+                                StrokeThickness="0">
+							<Border.StrokeShape>
+								<RoundRectangle CornerRadius="10"/>
+							</Border.StrokeShape>
+
+							<Entry BackgroundColor="Transparent"
+                                   Placeholder="0"
+                                   Text="{Binding Text}"
+                                   FontSize="18"
+                                   TextColor="White"/>
+						</Border>
+
+					</Grid>
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    
+                    <Grid RowSpacing="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0"
+                               HorizontalOptions="Start"
+                               VerticalOptions="Center"
+                               Text="Risk"
+                               FontSize="18"
+                               TextColor="White"/>
+
+                        <Border Grid.Row="1"
+                                HorizontalOptions="Fill"
+                                VerticalOptions="Center"
+                                Padding="10, 0"
+                                Background="{StaticResource ForegroundColor}"
+                                StrokeThickness="0">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="10"/>
+                            </Border.StrokeShape>
+
+                            <Entry BackgroundColor="Transparent"
+                                   Placeholder="0%"
+                                   Text="{Binding Text}"
+                                   FontSize="18"
+                                   TextColor="White"/>
+                        </Border>
+
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Row="2">
+
+                </Grid>
+
+                <Grid Grid.Row="3">
+
+                </Grid>
+
+
+            </Grid>
+        </Grid>
     </Grid>
 </ContentPage>
+
+    
+    <!--
+    <Grid RowDefinitions="100, Auto, *"
+      ColumnDefinitions="0.75*, 0.25*"
+      Padding="10"
+      RowSpacing="10"
+      ColumnSpacing="10">
+
+    <Image Grid.ColumnSpan="2"
+           Source="profile_circle.png"
+           BackgroundColor ="Transparent"/>
+
+    <Entry Placeholder="Enter task"
+           Text="{Binding Text}"
+           Grid.Row="1"/>
+
+    <Button Text="Add"
+            Command="{Binding AddCommand}"
+            Grid.Row="1"
+            Grid.Column="1"/>
+
+    <CollectionView Grid.Row="2" Grid.ColumnSpan="2"
+                    ItemsSource="{Binding Items}"
+                    SelectionMode="None">
+
+        <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="{x:Type x:String}">
+                <SwipeView>
+                    <SwipeView.RightItems>
+                        <SwipeItems>
+                            <SwipeItem Text="Delete"
+                                       BackgroundColor="Red"
+                                       Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=DeleteCommand}"
+                                       CommandParameter="{Binding .}"/>
+                        </SwipeItems>
+                    </SwipeView.RightItems>
+                    <Grid Padding="2">
+                        <Frame>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=TapCommand}"
+                                                      CommandParameter="{Binding .}"/>
+                            </Frame.GestureRecognizers>
+                            <Label Text="{Binding .}"
+                                   FontSize="24"/>
+                        </Frame>
+                    </Grid>
+                </SwipeView>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</Grid>
+    -->
