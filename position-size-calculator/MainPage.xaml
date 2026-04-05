@@ -1,144 +1,158 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PositionSizeCalculator.MainPage"
-             xmlns:viewmodel="clr-namespace:PositionSizeCalculator.ViewModel"
-             x:DataType="viewmodel:MainViewModel">
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 x:Class="PositionSizeCalculator.MainPage"
+			 xmlns:viewmodel="clr-namespace:PositionSizeCalculator.ViewModel"
+			 x:DataType="viewmodel:MainViewModel">
 
-    <Grid RowSpacing="30" 
-          Padding="25">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
+	<Grid RowSpacing="30"
+		  Padding="25">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
 
-        <Grid Grid.Row="0">
-            <Label HorizontalOptions="Center"
-                   VerticalOptions="Center"              
-                   Text="Position Size Calculator"
-                   FontSize="30"
-                   FontAttributes="Bold"
-                   TextColor="White" />
-        </Grid>
+		<Grid Grid.Row="0">
+			<Label HorizontalOptions="Center"
+				   VerticalOptions="Center"
+				   Text="Position Size Calculator"
+				   FontSize="30"
+				   FontAttributes="Bold"
+				   TextColor="White" />
+		</Grid>
 
-        <Grid Grid.Row="1">
+		<Grid Grid.Row="1">
 
-            <Grid ColumnSpacing="25">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.5*" />
-                    <ColumnDefinition Width="0.5*" />
-                </Grid.ColumnDefinitions>
+			<Grid ColumnSpacing="25">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="0.5*" />
+					<ColumnDefinition Width="0.5*" />
+				</Grid.ColumnDefinitions>
 
-                <Button Grid.Column="0"
-                        HorizontalOptions="Fill"
-                        VerticalOptions="Center"
-                        CornerRadius="10"
-                        BackgroundColor="{StaticResource Green}"
-                        Text="Long"
-                        FontSize="24"
-                        FontAttributes="Bold"
-                        TextColor="White" 
-						Command="{Binding ToggleLongCommand}" />
-						
-                <Button Grid.Column="1"
-                        HorizontalOptions="Fill"
-                        VerticalOptions="Center"
-                        CornerRadius="10"
-                        BackgroundColor="{StaticResource Red}"
-                        Text="Short"
-                        FontSize="24"
-                        FontAttributes="Bold"
-                        TextColor="White"
-						Command="{Binding ToggleShortCommand}" />
-            </Grid>
-        </Grid>
+				<Border Grid.Column="0"
+						HorizontalOptions="Fill"
+						VerticalOptions="Center"
+						Stroke="{StaticResource StrokeColor}"
+						StrokeThickness="1"
+						BackgroundColor="{Binding LongButtonColor}">
+					<Border.StrokeShape>
+						<RoundRectangle CornerRadius="10" />
+					</Border.StrokeShape>
 
-        <Grid Grid.Row="2">
+					<Button Text="Long"
+							BackgroundColor="Transparent"
+							FontSize="24"
+							FontAttributes="Bold"
+							TextColor="White"
+							Command="{Binding ToggleLongCommand}" />
+				</Border>
 
-            <Grid RowSpacing="10">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
+				<Border Grid.Column="1"
+						HorizontalOptions="Fill"
+						VerticalOptions="Center"
+						Stroke="{StaticResource StrokeColor}"
+						StrokeThickness="1"
+						BackgroundColor="{Binding ShortButtonColor}">
+					<Border.StrokeShape>
+						<RoundRectangle CornerRadius="10" />
+					</Border.StrokeShape>
 
-                <Grid Grid.Row="0">
+					<Button Text="Short"
+							BackgroundColor="Transparent"
+							FontSize="24"
+							FontAttributes="Bold"
+							TextColor="White"
+							Command="{Binding ToggleShortCommand}" />
+				</Border>
+			</Grid>
+		</Grid>
 
-                    <Grid RowSpacing="5">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
+		<Grid Grid.Row="2">
 
-                        <Label Grid.Row="0"
-                               HorizontalOptions="Start"
-                               VerticalOptions="Center"
-                               Text="Account Size"
-                               FontSize="18"
-                               TextColor="White" />
+			<Grid RowSpacing="10">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="*" />
+				</Grid.RowDefinitions>
+
+				<Grid Grid.Row="0">
+
+					<Grid RowSpacing="5">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto" />
+							<RowDefinition Height="*" />
+						</Grid.RowDefinitions>
+
+						<Label Grid.Row="0"
+							   HorizontalOptions="Start"
+							   VerticalOptions="Center"
+							   Text="Account Size"
+							   FontSize="18"
+							   TextColor="White" />
 
 						<Border Grid.Row="1"
-                                HorizontalOptions="Fill"
-                                VerticalOptions="Center"
-                                Padding="10, 0"
-                                Background="{StaticResource ForegroundColor}"
-                                StrokeThickness="0">
+								HorizontalOptions="Fill"
+								VerticalOptions="Center"
+								Padding="10, 0"
+								Stroke="{StaticResource StrokeColor}"
+								StrokeThickness="1"
+								Background="{StaticResource ForegroundColor}">
 							<Border.StrokeShape>
 								<RoundRectangle CornerRadius="10" />
 							</Border.StrokeShape>
 
 							<Entry Keyboard="Numeric"
-								   BackgroundColor="Transparent"
-                                   Placeholder="0"
+								   Placeholder="0"
 								   Text="{Binding AccountSizeValue}"
-                                   FontSize="18"
-                                   TextColor="White" />
+								   FontSize="18"
+								   TextColor="White" />
 						</Border>
 					</Grid>
-                </Grid>
+				</Grid>
 
-                <Grid Grid.Row="1">
-                    
-                    <Grid RowSpacing="5">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
+				<Grid Grid.Row="1">
 
-                        <Label Grid.Row="0"
-                               HorizontalOptions="Start"
-                               VerticalOptions="Center"
-                               Text="Risk"
-                               FontSize="18"
-                               TextColor="White" />
+					<Grid RowSpacing="5">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto" />
+							<RowDefinition Height="*" />
+						</Grid.RowDefinitions>
+
+						<Label Grid.Row="0"
+							   HorizontalOptions="Start"
+							   VerticalOptions="Center"
+							   Text="Risk"
+							   FontSize="18"
+							   TextColor="White" />
 
 						<Border Grid.Row="1"
-                                HorizontalOptions="Fill"
-                                VerticalOptions="Center"
-                                Padding="10, 0"
-                                Background="{StaticResource ForegroundColor}"
-                                StrokeThickness="0">
+								HorizontalOptions="Fill"
+								VerticalOptions="Center"
+								Padding="10, 0"
+								Stroke="{StaticResource StrokeColor}"
+								StrokeThickness="1"
+								Background="{StaticResource ForegroundColor}">
 							<Border.StrokeShape>
 								<RoundRectangle CornerRadius="10" />
 							</Border.StrokeShape>
 
 							<Entry Keyboard="Numeric"
-								   BackgroundColor="Transparent"
-                                   Placeholder="0%"
-                                   Text="{Binding RiskPercentage}"
-                                   FontSize="18"
-                                   TextColor="White" />
+								   Placeholder="0%"
+								   Text="{Binding RiskPercentage}"
+								   FontSize="18"
+								   TextColor="White" />
 						</Border>
 					</Grid>
-                </Grid>
+				</Grid>
 
-                <Grid Grid.Row="2">
+				<Grid Grid.Row="2">
 					<Grid RowSpacing="5">
 						<Grid.RowDefinitions>
 							<RowDefinition Height="Auto" />
@@ -156,14 +170,14 @@
 								HorizontalOptions="Fill"
 								VerticalOptions="Center"
 								Padding="10, 0"
-								Background="{StaticResource ForegroundColor}"
-								StrokeThickness="0">
+								Stroke="{StaticResource StrokeColor}"
+								StrokeThickness="1"
+								Background="{StaticResource ForegroundColor}">
 							<Border.StrokeShape>
 								<RoundRectangle CornerRadius="10" />
 							</Border.StrokeShape>
 
 							<Entry Keyboard="Numeric"
-								   BackgroundColor="Transparent"
 								   Placeholder="0"
 								   Text="{Binding EntryPrice}"
 								   FontSize="18"
@@ -172,7 +186,7 @@
 					</Grid>
 				</Grid>
 
-                <Grid Grid.Row="3">
+				<Grid Grid.Row="3">
 					<Grid RowSpacing="5">
 						<Grid.RowDefinitions>
 							<RowDefinition Height="Auto" />
@@ -190,14 +204,14 @@
 								HorizontalOptions="Fill"
 								VerticalOptions="Center"
 								Padding="10, 0"
-								Background="{StaticResource ForegroundColor}"
-								StrokeThickness="0">
+								Stroke="{StaticResource StrokeColor}"
+								StrokeThickness="1"
+								Background="{StaticResource ForegroundColor}">
 							<Border.StrokeShape>
 								<RoundRectangle CornerRadius="10" />
 							</Border.StrokeShape>
 
 							<Entry Keyboard="Numeric"
-								   BackgroundColor="Transparent"
 								   Placeholder="0"
 								   Text="{Binding StopLossPrice}"
 								   FontSize="18"
@@ -207,8 +221,8 @@
 				</Grid>
 
 
-            </Grid>
-        </Grid>
+			</Grid>
+		</Grid>
 
 		<Grid Grid.Row="3">
 			<Grid RowSpacing="5">
@@ -306,56 +320,3 @@
 		</Grid>
 	</Grid>
 </ContentPage>
-
-    
-    <!--
-    <Grid RowDefinitions="100, Auto, *"
-      ColumnDefinitions="0.75*, 0.25*"
-      Padding="10"
-      RowSpacing="10"
-      ColumnSpacing="10">
-
-    <Image Grid.ColumnSpan="2"
-           Source="profile_circle.png"
-           BackgroundColor ="Transparent"/>
-
-    <Entry Placeholder="Enter task"
-           Text="{Binding Text}"
-           Grid.Row="1"/>
-
-    <Button Text="Add"
-            Command="{Binding AddCommand}"
-            Grid.Row="1"
-            Grid.Column="1"/>
-
-    <CollectionView Grid.Row="2" Grid.ColumnSpan="2"
-                    ItemsSource="{Binding Items}"
-                    SelectionMode="None">
-
-        <CollectionView.ItemTemplate>
-            <DataTemplate x:DataType="{x:Type x:String}">
-                <SwipeView>
-                    <SwipeView.RightItems>
-                        <SwipeItems>
-                            <SwipeItem Text="Delete"
-                                       BackgroundColor="Red"
-                                       Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=DeleteCommand}"
-                                       CommandParameter="{Binding .}"/>
-                        </SwipeItems>
-                    </SwipeView.RightItems>
-                    <Grid Padding="2">
-                        <Frame>
-                            <Frame.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=TapCommand}"
-                                                      CommandParameter="{Binding .}"/>
-                            </Frame.GestureRecognizers>
-                            <Label Text="{Binding .}"
-                                   FontSize="24"/>
-                        </Frame>
-                    </Grid>
-                </SwipeView>
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-    </CollectionView>
-</Grid>
-    -->

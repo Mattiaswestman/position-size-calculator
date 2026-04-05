@@ -9,6 +9,7 @@
     <!-- Custom colors -->
     <Color x:Key="BackgroundColor">#23232B</Color>
     <Color x:Key="ForegroundColor">#1A1A21</Color>
+	<Color x:Key="StrokeColor">#535367</Color>
     <Color x:Key="Green">#059669</Color>
     <Color x:Key="Red">#EF4444</Color>
 
