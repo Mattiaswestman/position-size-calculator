@@ -72,10 +72,13 @@
 			</Grid>
 		</Grid>
 
+		<!-- Entries -->
+		
 		<Grid Grid.Row="2">
 
 			<Grid RowSpacing="10">
 				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
 					<RowDefinition Height="Auto" />
 					<RowDefinition Height="Auto" />
 					<RowDefinition Height="Auto" />
@@ -128,6 +131,41 @@
 						<Label Grid.Row="0"
 							   HorizontalOptions="Start"
 							   VerticalOptions="Center"
+							   Text="Max Position Size"
+							   FontSize="18"
+							   TextColor="White" />
+
+						<Border Grid.Row="1"
+								HorizontalOptions="Fill"
+								VerticalOptions="Center"
+								Padding="10, 0"
+								Stroke="{StaticResource StrokeColor}"
+								StrokeThickness="1"
+								Background="{StaticResource ForegroundColor}">
+							<Border.StrokeShape>
+								<RoundRectangle CornerRadius="10" />
+							</Border.StrokeShape>
+
+							<Entry Keyboard="Numeric"
+								   Placeholder="0"
+								   Text="{Binding MaxPositionSizeValue}"
+								   FontSize="18"
+								   TextColor="White" />
+						</Border>
+					</Grid>
+				</Grid>
+
+				<Grid Grid.Row="2">
+
+					<Grid RowSpacing="5">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto" />
+							<RowDefinition Height="*" />
+						</Grid.RowDefinitions>
+
+						<Label Grid.Row="0"
+							   HorizontalOptions="Start"
+							   VerticalOptions="Center"
 							   Text="Risk"
 							   FontSize="18"
 							   TextColor="White" />
@@ -152,7 +190,7 @@
 					</Grid>
 				</Grid>
 
-				<Grid Grid.Row="2">
+				<Grid Grid.Row="3">
 					<Grid RowSpacing="5">
 						<Grid.RowDefinitions>
 							<RowDefinition Height="Auto" />
@@ -186,7 +224,7 @@
 					</Grid>
 				</Grid>
 
-				<Grid Grid.Row="3">
+				<Grid Grid.Row="4">
 					<Grid RowSpacing="5">
 						<Grid.RowDefinitions>
 							<RowDefinition Height="Auto" />
@@ -224,6 +262,8 @@
 			</Grid>
 		</Grid>
 
+		<!-- Labels -->
+		
 		<Grid Grid.Row="3">
 			<Grid RowSpacing="5">
 				<Grid.RowDefinitions>

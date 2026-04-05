@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Microsoft.Maui.Handlers;
 using PositionSizeCalculator.ViewModel;
 
 namespace PositionSizeCalculator

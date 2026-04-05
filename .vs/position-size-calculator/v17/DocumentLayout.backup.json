@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Development\\position-size-calculator\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{73FF0EC4-9165-D82B-8C8C-933E3365C5D7}|position-size-calculator\\position-size-calculator.csproj|c:\\development\\position-size-calculator\\position-size-calculator\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{73FF0EC4-9165-D82B-8C8C-933E3365C5D7}|position-size-calculator\\position-size-calculator.csproj|solutionrelative:position-size-calculator\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{73FF0EC4-9165-D82B-8C8C-933E3365C5D7}|position-size-calculator\\position-size-calculator.csproj|c:\\development\\position-size-calculator\\position-size-calculator\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{73FF0EC4-9165-D82B-8C8C-933E3365C5D7}|position-size-calculator\\position-size-calculator.csproj|solutionrelative:position-size-calculator\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
@@ -11,8 +15,8 @@
       "RelativeMoniker": "D:0:0:{73FF0EC4-9165-D82B-8C8C-933E3365C5D7}|position-size-calculator\\position-size-calculator.csproj|solutionrelative:position-size-calculator\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{73FF0EC4-9165-D82B-8C8C-933E3365C5D7}|position-size-calculator\\position-size-calculator.csproj|c:\\development\\position-size-calculator\\position-size-calculator\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{73FF0EC4-9165-D82B-8C8C-933E3365C5D7}|position-size-calculator\\position-size-calculator.csproj|solutionrelative:position-size-calculator\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{73FF0EC4-9165-D82B-8C8C-933E3365C5D7}|position-size-calculator\\position-size-calculator.csproj|c:\\development\\position-size-calculator\\position-size-calculator\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{73FF0EC4-9165-D82B-8C8C-933E3365C5D7}|position-size-calculator\\position-size-calculator.csproj|solutionrelative:position-size-calculator\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{73FF0EC4-9165-D82B-8C8C-933E3365C5D7}|position-size-calculator\\position-size-calculator.csproj|c:\\development\\position-size-calculator\\position-size-calculator\\resources\\styles\\colors.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -25,10 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{73FF0EC4-9165-D82B-8C8C-933E3365C5D7}|position-size-calculator\\position-size-calculator.csproj|c:\\development\\position-size-calculator\\position-size-calculator\\resources\\styles\\styles.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{73FF0EC4-9165-D82B-8C8C-933E3365C5D7}|position-size-calculator\\position-size-calculator.csproj|solutionrelative:position-size-calculator\\resources\\styles\\styles.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{73FF0EC4-9165-D82B-8C8C-933E3365C5D7}|position-size-calculator\\position-size-calculator.csproj|c:\\development\\position-size-calculator\\position-size-calculator\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{73FF0EC4-9165-D82B-8C8C-933E3365C5D7}|position-size-calculator\\position-size-calculator.csproj|solutionrelative:position-size-calculator\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{73FF0EC4-9165-D82B-8C8C-933E3365C5D7}|position-size-calculator\\position-size-calculator.csproj|c:\\development\\position-size-calculator\\position-size-calculator\\viewmodel\\detailviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -58,11 +58,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Styles.xaml",
               "DocumentMoniker": "C:\\Development\\position-size-calculator\\position-size-calculator\\Resources\\Styles\\Styles.xaml",
               "RelativeDocumentMoniker": "position-size-calculator\\Resources\\Styles\\Styles.xaml",
@@ -75,7 +75,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Colors.xaml",
               "DocumentMoniker": "C:\\Development\\position-size-calculator\\position-size-calculator\\Resources\\Styles\\Colors.xaml",
               "RelativeDocumentMoniker": "position-size-calculator\\Resources\\Styles\\Colors.xaml",
@@ -88,7 +88,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "App.xaml",
               "DocumentMoniker": "C:\\Development\\position-size-calculator\\position-size-calculator\\App.xaml",
               "RelativeDocumentMoniker": "position-size-calculator\\App.xaml",
@@ -125,19 +125,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "MauiProgram.cs",
               "DocumentMoniker": "C:\\Development\\position-size-calculator\\position-size-calculator\\MauiProgram.cs",
               "RelativeDocumentMoniker": "position-size-calculator\\MauiProgram.cs",
               "ToolTip": "C:\\Development\\position-size-calculator\\position-size-calculator\\MauiProgram.cs",
               "RelativeToolTip": "position-size-calculator\\MauiProgram.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-15T16:26:39.429Z"
+              "WhenOpened": "2026-03-15T16:26:39.429Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "MainPage.xaml.cs",
               "DocumentMoniker": "C:\\Development\\position-size-calculator\\position-size-calculator\\MainPage.xaml.cs",
               "RelativeDocumentMoniker": "position-size-calculator\\MainPage.xaml.cs",
@@ -150,26 +151,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MainPage.xaml",
               "DocumentMoniker": "C:\\Development\\position-size-calculator\\position-size-calculator\\MainPage.xaml",
               "RelativeDocumentMoniker": "position-size-calculator\\MainPage.xaml",
-              "ToolTip": "C:\\Development\\position-size-calculator\\position-size-calculator\\MainPage.xaml*",
-              "RelativeToolTip": "position-size-calculator\\MainPage.xaml*",
-              "ViewState": "AgIAAG0AAAAAAAAAAAAAAKAAAAAOAAAAAAAAAA==",
+              "ToolTip": "C:\\Development\\position-size-calculator\\position-size-calculator\\MainPage.xaml",
+              "RelativeToolTip": "position-size-calculator\\MainPage.xaml",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAAAJcAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-03-16T10:09:39.77Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "MainViewModel.cs",
               "DocumentMoniker": "C:\\Development\\position-size-calculator\\position-size-calculator\\ViewModel\\MainViewModel.cs",
               "RelativeDocumentMoniker": "position-size-calculator\\ViewModel\\MainViewModel.cs",
               "ToolTip": "C:\\Development\\position-size-calculator\\position-size-calculator\\ViewModel\\MainViewModel.cs",
               "RelativeToolTip": "position-size-calculator\\ViewModel\\MainViewModel.cs",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAgwG8AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAswIIAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-16T11:23:06.171Z",
               "EditorCaption": ""

@@ -22,6 +22,19 @@ namespace PositionSizeCalculator.ViewModel
             }
         }
 
+        public double MaxPositionSizeValue
+        {
+            get => maxPositionSizeValue;
+            set
+            {
+                if (value != maxPositionSizeValue)
+                {
+                    maxPositionSizeValue = value;
+                    TryCalculatePositionSize();
+                }
+            }
+        }
+
         public double RiskPercentage
         {
             get => riskPercentage;
@@ -71,6 +84,7 @@ namespace PositionSizeCalculator.ViewModel
         private bool isLong = true;
 
         private double accountSizeValue;
+        private double maxPositionSizeValue;
         private double riskPercentage;
         private double entryPrice;
         private double stopLossPrice;
@@ -106,9 +120,15 @@ namespace PositionSizeCalculator.ViewModel
 
             RiskValue = accountSizeValue * (riskPercentage / 100);
             double riskPerShare = Math.Abs(entryPrice - stopLossPrice);
-            SharesAmount = (int)(RiskValue / riskPerShare);
-            SharesValue = SharesAmount * entryPrice;
-            Math.Round(SharesValue, 2);
+            SharesAmount = (int)Math.Floor(RiskValue / riskPerShare);
+
+            int maxSharesAmount = (int)Math.Floor(MaxPositionSizeValue / entryPrice);
+            if (SharesAmount > maxSharesAmount)
+            {
+                SharesAmount = maxSharesAmount;
+            }
+
+            SharesValue = Math.Round(SharesAmount * entryPrice, 2);
         }
 
         private static Color GetStaticResourceColor(string key)
@@ -122,7 +142,7 @@ namespace PositionSizeCalculator.ViewModel
 
         private bool AreAllValuesSet()
         {
-            return (accountSizeValue != 0 && riskPercentage != 0 && entryPrice != 0 && stopLossPrice != 0);
+            return (accountSizeValue != 0 && maxPositionSizeValue != 0 && riskPercentage != 0 && entryPrice != 0 && stopLossPrice != 0);
         }
 
         partial void OnIsLongChanged(bool value)
