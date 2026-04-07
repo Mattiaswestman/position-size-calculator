@@ -46,7 +46,7 @@
 						<Label Grid.Row="0"
 							   HorizontalOptions="Start"
 							   VerticalOptions="Center"
-							   Text="Account Size"
+							   Text="Account Size (SEK)"
 							   FontSize="18"
 							   TextColor="White" />
 
@@ -63,7 +63,7 @@
 
 							<Entry Keyboard="Numeric"
 								   Placeholder="0"
-								   Text="{Binding AccountSizeValue}"
+								   Text="{Binding AccountSizeValue, Converter={StaticResource ZeroToEmptyStringConverter}}"
 								   FontSize="18"
 								   TextColor="White" />
 						</Border>
@@ -81,7 +81,7 @@
 						<Label Grid.Row="0"
 							   HorizontalOptions="Start"
 							   VerticalOptions="Center"
-							   Text="Max Position Size"
+							   Text="Max Position Size (SEK)"
 							   FontSize="18"
 							   TextColor="White" />
 
@@ -98,7 +98,7 @@
 
 							<Entry Keyboard="Numeric"
 								   Placeholder="0"
-								   Text="{Binding MaxPositionSizeValue}"
+								   Text="{Binding MaxPositionSizeValue, Converter={StaticResource ZeroToEmptyStringConverter}}"
 								   FontSize="18"
 								   TextColor="White" />
 						</Border>
@@ -116,7 +116,7 @@
 						<Label Grid.Row="0"
 							   HorizontalOptions="Start"
 							   VerticalOptions="Center"
-							   Text="Risk"
+							   Text="Risk (%)"
 							   FontSize="18"
 							   TextColor="White" />
 
@@ -132,8 +132,8 @@
 							</Border.StrokeShape>
 
 							<Entry Keyboard="Numeric"
-								   Placeholder="0%"
-								   Text="{Binding RiskPercentage}"
+								   Placeholder="0"
+								   Text="{Binding RiskPercentage, Converter={StaticResource ZeroToEmptyStringConverter}}"
 								   FontSize="18"
 								   TextColor="White" />
 						</Border>
@@ -150,7 +150,7 @@
 						<Label Grid.Row="0"
 							   HorizontalOptions="Start"
 							   VerticalOptions="Center"
-							   Text="Entry"
+							   Text="Entry ($)"
 							   FontSize="18"
 							   TextColor="White" />
 
@@ -167,7 +167,7 @@
 
 							<Entry Keyboard="Numeric"
 								   Placeholder="0"
-								   Text="{Binding EntryPrice}"
+								   Text="{Binding EntryPrice, Converter={StaticResource ZeroToEmptyStringConverter}}"
 								   FontSize="18"
 								   TextColor="White" />
 						</Border>
@@ -184,7 +184,7 @@
 						<Label Grid.Row="0"
 							   HorizontalOptions="Start"
 							   VerticalOptions="Center"
-							   Text="Stop Loss"
+							   Text="Stop Loss ($)"
 							   FontSize="18"
 							   TextColor="White" />
 
@@ -201,7 +201,7 @@
 
 							<Entry Keyboard="Numeric"
 								   Placeholder="0"
-								   Text="{Binding StopLossPrice}"
+								   Text="{Binding StopLossPrice, Converter={StaticResource ZeroToEmptyStringConverter}}"
 								   FontSize="18"
 								   TextColor="White" />
 						</Border>

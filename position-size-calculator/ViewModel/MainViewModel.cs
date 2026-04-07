@@ -88,8 +88,8 @@ namespace PositionSizeCalculator.ViewModel
         public MainViewModel()
         {
             SharesAmountText = "-- shares";
-            SharesValueText = "$--";
-            RiskValueText = "$--";
+            SharesValueText = "-- SEK";
+            RiskValueText = "-- SEK";
         }
 
         private void TryCalculatePositionSize()
@@ -112,8 +112,8 @@ namespace PositionSizeCalculator.ViewModel
             sharesValue = Math.Round(sharesAmount * entryPrice, 2);
 
             SharesAmountText = $"{sharesAmount} shares";
-            SharesValueText = $"${sharesValue}";
-            RiskValueText = $"${riskValue}";
+            SharesValueText = $"{sharesValue} SEK";
+            RiskValueText = $"{riskValue} SEK";
         }
 
         private bool AreAllValuesSet()

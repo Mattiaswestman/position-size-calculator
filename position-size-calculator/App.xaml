@@ -2,10 +2,12 @@
 <Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PositionSizeCalculator"
+			 xmlns:utils="clr-namespace:PositionSizeCalculator.Utilities"
              x:Class="PositionSizeCalculator.App">
     <Application.Resources>
         <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
+			<utils:ZeroToEmptyStringConverter x:Key="ZeroToEmptyStringConverter" />
+			<ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
