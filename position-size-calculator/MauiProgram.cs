@@ -2,6 +2,14 @@
 using Microsoft.Maui.Handlers;
 using PositionSizeCalculator.ViewModel;
 
+#if ANDROID
+using Android.Content.Res;
+using Android.Graphics;
+#endif
+#if IOS || MACCATALYST
+using UIKit;
+#endif
+
 namespace PositionSizeCalculator
 {
     public static class MauiProgram
@@ -24,6 +32,19 @@ namespace PositionSizeCalculator
             builder.Services.AddTransient<DetailViewModel>();
 
             builder.Logging.AddDebug();
+
+#if ANDROID
+            EntryHandler.Mapper.AppendToMapping("NoUnderline", (handler, view) =>
+            {
+                handler.PlatformView.BackgroundTintList = Android.Content.Res.ColorStateList.ValueOf(Android.Graphics.Color.Transparent);
+            });
+#endif
+#if IOS || MACCATALYST
+            EntryHandler.Mapper.AppendToMapping("NoUnderline", (handler, view) =>
+            {
+                handler.PlatformView.BorderStyle = UIKit.UITextBorderStyle.None;
+            });
+#endif
 
             return builder.Build();
         }

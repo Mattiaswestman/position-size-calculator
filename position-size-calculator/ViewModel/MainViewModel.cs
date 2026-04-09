@@ -134,9 +134,9 @@ namespace PositionSizeCalculator.ViewModel
                 SharesValueText = $"{sharesValue} SEK";
                 RiskValueText = $"{riskValue} SEK";
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-                Debug.WriteLine($"Exception in TryCalculatePositionSizeAsync: {ex}");
+                Debug.WriteLine($"[Mattias] Exception in TryCalculatePositionSizeAsync: {exception}");
             }
         }
 

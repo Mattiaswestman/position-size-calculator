@@ -235,16 +235,16 @@
 					   VerticalOptions="Center"
 					   Padding="10, 0"
 					   Text="{Binding SharesAmountText}"
-					   FontSize="30"
+					   FontSize="42"
 					   FontAttributes="Bold"
 					   TextColor="{StaticResource Green}" />
 
-				<BoxView Grid.Row="1"
+				<!--<BoxView Grid.Row="1"
 						 Grid.ColumnSpan="2"
 						 HeightRequest="2"
 						 HorizontalOptions="Fill"
 						 VerticalOptions="Center"
-						 BackgroundColor="{StaticResource ForegroundColor}" />
+						 BackgroundColor="{StaticResource ForegroundColor}" />-->
 
 				<Label Grid.Row="2"
 					   Grid.Column="0"

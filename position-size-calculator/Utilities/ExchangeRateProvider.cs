@@ -35,7 +35,7 @@ namespace PositionSizeCalculator.Utilities
                 return rate;
             }
 
-            throw new Exception("[Mattias] Failed to retrieve USD to SEK exchange rate.");
+            throw new Exception("Failed to retrieve USD to SEK exchange rate.");
         }
     }
 }
