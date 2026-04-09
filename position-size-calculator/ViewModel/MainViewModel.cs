@@ -112,30 +112,37 @@ namespace PositionSizeCalculator.ViewModel
                 return;
             }
 
-            riskValue = accountSizeValue * ((decimal)riskPercentage / 100);
-
-            decimal entryPriceInSek = await exchangeRateProvider.ConvertAsync(entryPrice, "USD", "SEK");
-            decimal stopLossPriceInSek = await exchangeRateProvider.ConvertAsync(stopLossPrice, "USD", "SEK");
-            decimal riskPerShare = Math.Abs(entryPriceInSek - stopLossPriceInSek);
-
-            sharesAmount = (int)Math.Floor(riskValue / riskPerShare);
-
-            int maxSharesAmount = (int)Math.Floor(MaxPositionSizeValue / entryPriceInSek);
-            if (sharesAmount > maxSharesAmount)
+            try
             {
-                sharesAmount = maxSharesAmount;
+                riskValue = accountSizeValue * ((decimal)riskPercentage / 100m);
+
+                decimal entryPriceInSek = await exchangeRateProvider.ConvertAsync(entryPrice, "USD", "SEK");
+                decimal stopLossPriceInSek = await exchangeRateProvider.ConvertAsync(stopLossPrice, "USD", "SEK");
+                decimal riskPerShare = Math.Abs(entryPriceInSek - stopLossPriceInSek);
+
+                sharesAmount = (int)Math.Floor(riskValue / riskPerShare);
+
+                int maxSharesAmount = (int)Math.Floor(MaxPositionSizeValue / entryPriceInSek);
+                if (sharesAmount > maxSharesAmount)
+                {
+                    sharesAmount = maxSharesAmount;
+                }
+
+                sharesValue = Math.Round(sharesAmount * entryPriceInSek, 2);
+
+                SharesAmountText = $"{sharesAmount} shares";
+                SharesValueText = $"{sharesValue} SEK";
+                RiskValueText = $"{riskValue} SEK";
             }
-
-            sharesValue = Math.Round(sharesAmount * entryPriceInSek, 2);
-
-            SharesAmountText = $"{sharesAmount} shares";
-            SharesValueText = $"{sharesValue} SEK";
-            RiskValueText = $"{riskValue} SEK";
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Exception in TryCalculatePositionSizeAsync: {ex}");
+            }
         }
 
         private bool AreAllValuesSet()
         {
-            return (accountSizeValue != 0 && maxPositionSizeValue != 0 && riskPercentage != 0 && entryPrice != 0 && stopLossPrice != 0);
+            return (accountSizeValue != 0m && maxPositionSizeValue != 0m && riskPercentage != 0 && entryPrice != 0m && stopLossPrice != 0m);
         }
     }
 }
