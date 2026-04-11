@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Microsoft.Maui.Handlers;
-using PositionSizeCalculator.ViewModel;
+using PositionSizeCalculator.Views;
+using PositionSizeCalculator.ViewModels;
 
 #if ANDROID
 using Android.Content.Res;
@@ -27,9 +28,6 @@ namespace PositionSizeCalculator
 
             builder.Services.AddSingleton<MainPage>();
             builder.Services.AddSingleton<MainViewModel>();
-
-            builder.Services.AddTransient<DetailPage>();
-            builder.Services.AddTransient<DetailViewModel>();
 
             builder.Logging.AddDebug();
 
