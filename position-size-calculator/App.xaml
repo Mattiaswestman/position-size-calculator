@@ -5,8 +5,8 @@
 			 xmlns:utils="clr-namespace:PositionSizeCalculator.Helpers.Converters"
              x:Class="PositionSizeCalculator.App">
     <Application.Resources>
-        <ResourceDictionary>
-			<utils:ZeroToEmptyStringConverter x:Key="ZeroToEmptyStringConverter" />
+		<ResourceDictionary>
+			<utils:EntryConverter x:Key="EntryConverter" />
 			<ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />

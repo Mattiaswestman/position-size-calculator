@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Globalization;
 using CommunityToolkit.Mvvm.ComponentModel;
 using PositionSizeCalculator.Services;
 
@@ -120,10 +121,11 @@ namespace PositionSizeCalculator.ViewModels
                 }
 
                 sharesValue = Math.Round(sharesAmount * entryPriceInSek, 2);
+                riskValue = Math.Round(riskValue, 2);
 
                 SharesAmountText = $"{sharesAmount} shares";
-                SharesValueText = $"{sharesValue} SEK";
-                RiskValueText = $"{riskValue} SEK";
+                SharesValueText = $"{sharesValue.ToString("0.##", CultureInfo.InvariantCulture)} SEK";
+                RiskValueText = $"{riskValue.ToString("0.##", CultureInfo.InvariantCulture)} SEK";
             }
             catch (Exception exception)
             {

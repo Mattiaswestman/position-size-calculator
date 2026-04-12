@@ -63,7 +63,7 @@
 
 							<Entry Keyboard="Numeric"
 								   Placeholder="0"
-								   Text="{Binding AccountSizeValue, Converter={StaticResource ZeroToEmptyStringConverter}}"
+								   Text="{Binding AccountSizeValue, Converter={StaticResource EntryConverter}}"
 								   FontSize="18"
 								   TextColor="White" />
 						</Border>
@@ -98,7 +98,7 @@
 
 							<Entry Keyboard="Numeric"
 								   Placeholder="0"
-								   Text="{Binding MaxPositionSizeValue, Converter={StaticResource ZeroToEmptyStringConverter}}"
+								   Text="{Binding MaxPositionSizeValue, Converter={StaticResource EntryConverter}}"
 								   FontSize="18"
 								   TextColor="White" />
 						</Border>
@@ -133,7 +133,7 @@
 
 							<Entry Keyboard="Numeric"
 								   Placeholder="0"
-								   Text="{Binding RiskPercentage, Converter={StaticResource ZeroToEmptyStringConverter}}"
+								   Text="{Binding RiskPercentage, Converter={StaticResource EntryConverter}}"
 								   FontSize="18"
 								   TextColor="White" />
 						</Border>
@@ -167,7 +167,7 @@
 
 							<Entry Keyboard="Numeric"
 								   Placeholder="0"
-								   Text="{Binding EntryPrice, Converter={StaticResource ZeroToEmptyStringConverter}}"
+								   Text="{Binding EntryPrice, Converter={StaticResource EntryConverter}}"
 								   FontSize="18"
 								   TextColor="White" />
 						</Border>
@@ -201,7 +201,7 @@
 
 							<Entry Keyboard="Numeric"
 								   Placeholder="0"
-								   Text="{Binding StopLossPrice, Converter={StaticResource ZeroToEmptyStringConverter}}"
+								   Text="{Binding StopLossPrice, Converter={StaticResource EntryConverter}}"
 								   FontSize="18"
 								   TextColor="White" />
 						</Border>
@@ -234,7 +234,7 @@
 					   HorizontalOptions="Center"
 					   VerticalOptions="Center"
 					   Text="{Binding SharesAmountText}"
-					   FontSize="42"
+					   FontSize="48"
 					   FontAttributes="Bold"
 					   TextColor="{StaticResource Green}" />
 

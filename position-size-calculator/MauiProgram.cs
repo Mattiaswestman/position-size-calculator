@@ -2,7 +2,14 @@
 using Microsoft.Maui.Handlers;
 using PositionSizeCalculator.Views;
 using PositionSizeCalculator.ViewModels;
+//using Microsoft.Maui.Controls.PlatformConfiguration;
 
+
+#if WINDOWS
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Media;
+using Microsoft.UI.Xaml;
+#endif
 #if ANDROID
 using Android.Content.Res;
 using Android.Graphics;
@@ -31,18 +38,22 @@ namespace PositionSizeCalculator
 
             builder.Logging.AddDebug();
 
+            EntryHandler.Mapper.AppendToMapping("NoUnderline", (handler, view) =>
+            {
+#if WINDOWS
+                if (handler.PlatformView is TextBox textBox)
+                {
+                    textBox.BorderThickness = new Microsoft.UI.Xaml.Thickness(0);
+                    textBox.BorderBrush = new Microsoft.UI.Xaml.Media.SolidColorBrush(Microsoft.UI.Colors.Transparent);
+                }
+#endif
 #if ANDROID
-            EntryHandler.Mapper.AppendToMapping("NoUnderline", (handler, view) =>
-            {
                 handler.PlatformView.BackgroundTintList = Android.Content.Res.ColorStateList.ValueOf(Android.Graphics.Color.Transparent);
-            });
 #endif
-#if IOS || MACCATALYST
-            EntryHandler.Mapper.AppendToMapping("NoUnderline", (handler, view) =>
-            {
+#if IOS
                 handler.PlatformView.BorderStyle = UIKit.UITextBorderStyle.None;
-            });
 #endif
+            });
 
             return builder.Build();
         }
